@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(86, 144, 192);
+}
+
+
+/*now we will style the wrapper
+here we are centering our circles*/
+.wrapper{
+    display: flex; /*because all of our item will be inside that*/
+    justify-content: center; /*perfectly center */
+    align-items: center;
+    min-height: 100vh;
+}
+
+/*here we are justifying it to go in line */
+.wrapper .loader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+
+}
+
+/*this class will be used for each of the circles */
+.loader .loading{
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin: 0 10px;
+    /*we have to create a name for that loading animation
+    adding this line the circles will just bounce thus we have to get each loading one, loading two etc and make adjustments */
+    animation: load 0.8s ease infinite;
+}
+
+
+/*specific delay for each */
+.loader .loading.one{
+    animation-delay: 0.1s;
+}
+
+.loader .loading.two{
+    animation-delay: 0.2s;
+}
+
+.loader .loading.three{
+    animation-delay: 0.3s;
+}
+
+.loader .loading.four{
+    animation-delay: 0.4s;
+}
+
+/*create animation - starting point at 0 and then when it reaches to 50% changes */
+@keyframes load {
+    0% {
+        width: 30px;
+        height: 30px;
+    }
+    50% {
+        width: 20px;
+        height: 20px;
+    }
+}
