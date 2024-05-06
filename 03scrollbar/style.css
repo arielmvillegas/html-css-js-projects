@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgba(26, 124, 189, 0.281);
+}
+
+.card{
+    width: 700px;
+    background: lightyellow;
+    padding: 20px;
+    margin: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 30px;
+}
+
+/*webkit allows us to work with the Scrollbar*/
+::-webkit-scrollbar{
+    background-color: transparent;
+    width: 12px;
+}
+
+/*allows us to access that thumb.*/
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#FF5ACD, #FBDA61);
+    border-radius: 100px;
+}
