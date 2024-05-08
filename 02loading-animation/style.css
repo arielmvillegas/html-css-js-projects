@@ -1,69 +1,65 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background: rgb(86, 144, 192);
-}
-
-
-/*now we will style the wrapper
-here we are centering our circles*/
-.wrapper{
-    display: flex; /*because all of our item will be inside that*/
-    justify-content: center; /*perfectly center */
-    align-items: center;
-    min-height: 100vh;
-}
-
-/*here we are justifying it to go in line */
-.wrapper .loader{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
+body {
+    background-image: url(assets/coffeeshop.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+    padding: 0px;
 
 }
 
-/*this class will be used for each of the circles */
-.loader .loading{
-    background: white;
+header{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+}
+
+.cup{
+    height: 140px;
+    width: 180px;
+    border: 6px solid transparent;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    /*allows you to round the corners of element
+    border-radius: topleft top right bottom right bottom left */
+    border-radius: 0px 0px 70px 70px;
+    background: url(assets/coffee.png);
+    box-shadow: 0px 0px 0px 6px white;
+
+    background-repeat: repeat-x; /*specifies how the background repeats across the element. makes the image repeat horizontally (x)*/
+    /*specifies the starting position of the background image.
+    0px horizontally aligns the image starting from the left edge of the element 
+    140px positions the image starting at 140 pxiels down from the top of the edge of the element*/
+    background-position: 0px 140px; 
+    animation: fill 2.5s infinite; /* fill-name of the keyframe animation sequence to be applied */
+}
+
+@keyframes fill {
+    0%, 100% { /*start of animation*/
+        background-position: 0px 140px; /*horizontal offset, vertical offset*/
+    }
+    20%{
+        background-position: -450px 100px; /*moves to the background image to -450px, 100px*/
+    }
+    40%{
+        background-position: -900px 50px;
+    }
+    80%{
+        background-position: -1350px -40px;
+    }
+
+
+}
+
+.handle{
+    height: 60px;
     width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    margin: 0 10px;
-    /*we have to create a name for that loading animation
-    adding this line the circles will just bounce thus we have to get each loading one, loading two etc and make adjustments */
-    animation: load 0.8s ease infinite;
-}
-
-
-/*specific delay for each */
-.loader .loading.one{
-    animation-delay: 0.1s;
-}
-
-.loader .loading.two{
-    animation-delay: 0.2s;
-}
-
-.loader .loading.three{
-    animation-delay: 0.3s;
-}
-
-.loader .loading.four{
-    animation-delay: 0.4s;
-}
-
-/*create animation - starting point at 0 and then when it reaches to 50% changes */
-@keyframes load {
-    0% {
-        width: 30px;
-        height: 30px;
-    }
-    50% {
-        width: 20px;
-        height: 20px;
-    }
+    border: 5px solid white;
+    left: 186px;
+    top: 5px;
+    position: relative;
+    /* do the same but to the handle of the coffee now */
+    border-radius: 0px 25px 80px 0px;
 }
